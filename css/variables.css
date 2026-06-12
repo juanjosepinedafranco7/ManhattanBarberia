@@ -1,0 +1,68 @@
+/* ============================================================
+   VARIABLES.CSS
+   Design tokens: colors, typography, spacing, shadows, etc.
+   Centraliza la identidad visual. Cambia aquí los colores
+   o tipografías para re-marcar todo el sitio.
+============================================================ */
+:root {
+  /* ---------- Colors: surfaces ---------- */
+  --color-bg:           #0c0c0c;
+  --color-bg-alt:       #141414;
+  --color-surface:      #1a1a1a;
+  --color-card:         #1f1f1f;
+  --color-border:       #2c2c2c;
+  --color-border-light: #3a3a3a;
+
+  /* ---------- Colors: brand ---------- */
+  --color-primary:      #c9a227; /* dorado / navaja */
+  --color-primary-light:#e3bd4f;
+  --color-primary-dark: #9c7d1d;
+  --color-primary-soft: rgba(201, 162, 39, .12);
+
+  --color-accent:       #8a2c34; /* rojo barbero, uso puntual */
+  --color-accent-light: #b13e48;
+  --color-accent-soft:  rgba(138, 44, 52, .15);
+
+  /* ---------- Colors: text ---------- */
+  --color-text:        #f4f1ea;
+  --color-text-muted:  #a3a09a;
+  --color-text-faint:  #5e5b56;
+
+  /* ---------- Colors: feedback ---------- */
+  --color-success:     #4caf6d;
+  --color-success-soft:rgba(76, 175, 109, .12);
+  --color-error:       #e0524a;
+  --color-error-soft:  rgba(224, 82, 74, .12);
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Oswald', sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1200px;
+  --container-pad: 24px;
+  --section-py:    104px;
+  --section-py-sm: 64px;
+  --nav-height:    78px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-full: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-sm:   0 2px 12px rgba(0, 0, 0, .35);
+  --shadow-md:   0 14px 44px rgba(0, 0, 0, .45);
+  --shadow-gold: 0 10px 34px rgba(201, 162, 39, .22);
+
+  /* ---------- Motion ---------- */
+  --transition:      .25s cubic-bezier(.4,0,.2,1);
+  --transition-slow: .5s cubic-bezier(.4,0,.2,1);
+
+  /* ---------- z-index scale ---------- */
+  --z-nav:      1000;
+  --z-overlay:  1100;
+  --z-modal:    1200;
+  --z-toast:    1300;
+}

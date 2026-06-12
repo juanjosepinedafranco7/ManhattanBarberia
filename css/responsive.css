@@ -1,0 +1,58 @@
+/* ============================================================
+   RESPONSIVE.CSS
+   Breakpoints transversales que afectan layout general,
+   navegación y utilidades de grid. Los estilos específicos
+   de cada componente viven en su propio archivo; aquí solo
+   se ajustan comportamientos globales.
+============================================================ */
+
+/* ---------- Large desktop refinement ---------- */
+@media (min-width: 1400px) {
+  :root { --container-max: 1280px; }
+}
+
+/* ---------- Tablet landscape / small desktop ---------- */
+@media (max-width: 1020px) {
+  :root { --section-py: 80px; }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Tablet / mobile nav switch ---------- */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 64px;
+    --container-pad: 20px;
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head { margin-bottom: 44px; }
+}
+
+/* ---------- Small mobile ---------- */
+@media (max-width: 420px) {
+  :root { --container-pad: 16px; }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: .76rem;
+  }
+}

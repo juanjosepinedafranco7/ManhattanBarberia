@@ -1,0 +1,133 @@
+/* ============================================================
+   LAYOUT.CSS
+   Contenedores, encabezados de sección y utilidades de grid.
+============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+.section--tight {
+  padding: var(--section-py-sm) 0;
+}
+
+/* ---------- Section header (eyebrow + title + subtitle) ---------- */
+.section-head {
+  max-width: 620px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.section-head--left {
+  margin: 0 0 48px;
+  text-align: left;
+  max-width: 560px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.section-head--left .eyebrow::after,
+.section-head--left .eyebrow {
+  justify-content: flex-start;
+}
+
+.section-head--left .eyebrow::after {
+  display: none;
+}
+
+.section-head--left .eyebrow::before {
+  width: 28px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-title .accent {
+  color: var(--color-primary);
+}
+
+.section-desc {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ---------- Grid utilities ---------- */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ---------- Divider ---------- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 28px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--color-border-light));
+}
+
+.divider::after {
+  background: linear-gradient(90deg, var(--color-border-light), transparent);
+}
+
+.divider-icon {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
