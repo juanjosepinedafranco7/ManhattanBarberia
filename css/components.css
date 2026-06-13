@@ -6,6 +6,8 @@
 
 /* ---------- Buttons ---------- */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -24,11 +26,26 @@
               box-shadow var(--transition);
 }
 
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 18%, rgba(255,255,255,.28), transparent 82%);
+  transform: translateX(-120%);
+  transition: transform .65s ease;
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  transform: translateX(120%);
+}
+
 .btn:active { transform: translateY(1px); }
 
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-bg);
+  box-shadow: 0 0 0 rgba(201,162,39,0);
 }
 
 .btn-primary:hover {
@@ -102,6 +119,8 @@
 }
 
 .filter-btn {
+  position: relative;
+  overflow: hidden;
   font-family: var(--font-display);
   font-size: .76rem;
   font-weight: 600;
@@ -123,6 +142,7 @@
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--color-bg);
+  box-shadow: 0 10px 28px rgba(201,162,39,.16);
 }
 
 /* ---------- Stars ---------- */
@@ -258,4 +278,13 @@
   color: var(--color-primary);
   font-size: 1.3rem;
   flex-shrink: 0;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.feature:hover .icon-badge,
+.perk:hover .icon-badge,
+.contact-item:hover .icon-badge {
+  transform: translateY(-2px) rotate(-4deg);
+  border-color: rgba(201,162,39,.4);
+  background: rgba(201,162,39,.16);
 }

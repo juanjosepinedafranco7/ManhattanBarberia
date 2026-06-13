@@ -41,7 +41,7 @@ export function initServices() {
       : SERVICES.filter(s => s.category === categoryId);
 
     grid.innerHTML = items.map((s, i) => `
-      <article class="service-card reveal reveal-delay-${(i % 3) + 1}${s.popular ? ' is-popular' : ''}">
+      <article class="service-card reveal reveal-scale reveal-delay-${(i % 3) + 1}${s.popular ? ' is-popular' : ''}">
         ${s.popular ? '<span class="tag service-card__popular-tag">Más solicitado</span>' : ''}
         <div class="service-card__top">
           <h3 class="service-card__name">${s.name}</h3>

@@ -1,0 +1,167 @@
+/* ============================================================
+   PROOF.CSS
+   Sección de prueba social y garantía de servicio.
+============================================================ */
+
+.section--proof {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(138, 44, 52, .18), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(201, 162, 39, .16), transparent 28%),
+    var(--color-bg);
+}
+
+.proof-layout {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.proof-copy .section-desc {
+  max-width: 560px;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.proof-card {
+  position: relative;
+  min-height: 132px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.proof-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent, rgba(201, 162, 39, .16), transparent);
+  transform: translateX(-105%);
+  transition: transform .7s ease;
+}
+
+.proof-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 162, 39, .45);
+  box-shadow: 0 18px 44px rgba(0,0,0,.32);
+}
+
+.proof-card:hover::before {
+  transform: translateX(105%);
+}
+
+.proof-card strong {
+  position: relative;
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.proof-card span {
+  position: relative;
+  display: block;
+  max-width: 180px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.proof-media {
+  position: relative;
+  min-height: 520px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow-md);
+}
+
+.proof-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+}
+
+.proof-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 35%, rgba(12,12,12,.86) 100%),
+    linear-gradient(90deg, rgba(12,12,12,.45), transparent 58%);
+}
+
+.proof-note {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1;
+  padding: 22px 24px;
+  border-left: 3px solid var(--color-primary);
+  background: rgba(12,12,12,.72);
+  backdrop-filter: blur(12px);
+}
+
+.proof-note span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 7px;
+}
+
+.proof-note strong {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1020px) {
+  .proof-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-media,
+  .proof-media img {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 640px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-media,
+  .proof-media img {
+    min-height: 360px;
+  }
+
+  .proof-note {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+}

@@ -47,7 +47,7 @@ export function initGallery() {
     grid.innerHTML = currentItems.map((item, i) => {
       const sizeClass = item.size === 'wide' ? ' is-wide' : item.size === 'tall' ? ' is-tall' : '';
       return `
-        <figure class="gallery-item${sizeClass} reveal reveal-delay-${(i % 4) + 1}" data-index="${i}" tabindex="0" role="button" aria-label="Ver ${item.title}">
+        <figure class="gallery-item${sizeClass} reveal reveal-scale reveal-delay-${(i % 4) + 1}" data-index="${i}" tabindex="0" role="button" aria-label="Ver ${item.title}">
           <img src="${item.image}" alt="${item.title}" loading="lazy">
           <div class="gallery-item__overlay">
             <h4>${item.title}</h4>

@@ -15,7 +15,7 @@ export function initTeam() {
   if (!grid) return;
 
   grid.innerHTML = TEAM.map((member, i) => `
-    <article class="team-card reveal reveal-delay-${(i % 4) + 1}">
+    <article class="team-card reveal reveal-scale reveal-delay-${(i % 4) + 1}">
       <div class="team-card__photo">
         <img src="${member.image}" alt="${member.name}" loading="lazy">
         <div class="team-card__social">

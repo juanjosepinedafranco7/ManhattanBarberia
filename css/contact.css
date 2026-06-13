@@ -10,10 +10,12 @@
 }
 
 .contact-map {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
   aspect-ratio: 4/3;
+  box-shadow: var(--shadow-md);
 }
 
 .contact-map iframe {
@@ -34,6 +36,16 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
+  background: rgba(255,255,255,.035);
+  border-color: rgba(255,255,255,.08);
 }
 
 .contact-item__label {
@@ -72,7 +84,7 @@ a.contact-item__value:hover { color: var(--color-primary); }
 .social-link:hover {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
-  transform: translateY(-3px);
+  transform: translateY(-3px) rotate(-3deg);
 }
 
 .social-link svg { width: 18px; height: 18px; color: var(--color-primary); }
